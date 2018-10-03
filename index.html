@@ -5,17 +5,37 @@
     <title>Project Website</title>
     <link href="./main.css" rel="stylesheet" type="text/css">
   </head>
-  <body>
-    <h1>Do you have a website?</h1>
+  <body class="changeBody">
+    <h1 class="headLine">Do you have a website?</h1>
     <div class="inputSection">
       <div class="inputs">
         <input placeholder="Something">
       </div>
       <button class="addOption">Add</button>
     </div>
+    <div class="resultSection"></div>
     <img src="https://s.abcnews.com/images/Lifestyle/puppy-ht-3-er-170907_4x3_992.jpg" height="142" width="142"><br>
     <button class="goButton">Go!</button>
     <input type="email" id=email>
     <input type="fileupload" id=myfile>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+        $(".resultSection").hide()
+
+        var add_option = function() {
+          $(".inputs").append("<input></input>")
+        }
+
+        $(".addOption").click(add_option)
+
+        var change_color = function() {
+          $(".changeBody").change("color=green")
+        }
+
+        $(".headLine").click(change_color)
+      })
+    </script>
   </body>
 </html>
